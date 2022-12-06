@@ -4,13 +4,12 @@ img {
 }
 
 a:hover {
-    border: 2px solid blue;
+    border: 2px solid rgb(255, 145, 0);
     border-radius: 10px;
     background-color: rgb(3, 80, 153);
 }
 
 nav {
-    margin-top: 5px;
+
     background-color: rgb(59, 86, 110);
-    border-radius: 10px;
 }

@@ -6,3 +6,7 @@
     height: 100vh;
     background-image: url('/assets/image/airoplane_image.jpg');
 }
+
+.pt {
+    padding-top: 70px;
+}

@@ -8,13 +8,15 @@
                         <h4 class="mb-5">Login</h4>
 
                         <div class="form-outline form-white mb-2">
-                            <input type="email" id="typeEmailX" class="form-control form-control-sm" placeholder="Email"
-                                [(ngModel)]="email" minlength="10">
+
+                            <input type="email" id="typeEmailX" class="form-control form-control-sm"
+                                placeholder="example@demo.com" [(ngModel)]="email" email="true" minlength="6" required>
+
                         </div>
 
                         <div class="form-outline form-white mb-2">
                             <input type="password" id="typePasswordX" class="form-control form-control-sm"
-                                placeholder="Password" [(ngModel)]="password">
+                                placeholder="Password" [(ngModel)]="password" minlength="6" maxlength="16" required>
                         </div>
 
                         <p class="small mb-3 pb-sm-2"><a class="" routerLink="#!">Forgot
@@ -32,30 +34,32 @@
                 <ng-template #register>
                     <div class="card-body p-4 text-center">
 
-                        <div class="mb-md-5 mt-md-4 pb-5">
+                        <div class="mb-md-5 mt-md-4">
                             <h4 class="mb-5">Create Account</h4>
 
                             <div class="form-outline form-white mb-2">
                                 <input type="text" id="typeUsername" class="form-control form-control-sm"
-                                    placeholder="Username" [(ngModel)]="api.userData.Name">
+                                    placeholder="Enter username" [(ngModel)]="api.userData.Name" minlength="6" required>
                             </div>
 
                             <div class="form-outline form-white mb-2">
                                 <input type="email" id="typeEmailX" class="form-control form-control-sm"
-                                    placeholder="Email" [(ngModel)]="api.userData.Email">
+                                    placeholder="Enter email" [(ngModel)]="api.userData.Email" minlength="6" required
+                                    email="true">
                             </div>
 
                             <div class="form-outline form-white mb-2">
                                 <input type="text" id="typePasswordX" class="form-control form-control-sm"
-                                    placeholder="Password" [(ngModel)]="api.userData.Password">
+                                    placeholder="Enter password" [(ngModel)]="api.userData.Password" minlength="6"
+                                    required>
                             </div>
 
                             <div class="form-outline form-white mb-2">
                                 <input type="password" id="typePasswordX" class="form-control form-control-sm"
-                                    placeholder="Confirm password" [(ngModel)]="password">
+                                    placeholder="Confirm password" [(ngModel)]="password" minlength="6" required>
                             </div>
 
-                            <button class="btn btn-primary btn-sm px-5" type="submit"
+                            <button class="btn btn-primary btn-sm px-5 mt-5" type="submit"
                                 (click)="createNewAccount()">Register</button>
 
                         </div>
