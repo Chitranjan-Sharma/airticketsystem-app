@@ -1,1 +1,16 @@
 /* You can add global styles to this file, and also import other style files */
+body {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    height: 100vh;
+    background-image: url('assets/image/flight.jpg');
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+footer {
+    margin-top: auto;
+}

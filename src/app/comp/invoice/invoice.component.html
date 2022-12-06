@@ -1,0 +1,78 @@
+<div style="background-color: skyblue;">
+    <div class="container">
+        <div class="card m-2 p-5">
+            <h4 class="text-center mb-5">Flight Booking Details</h4>
+
+            <p class="px-2">Ticket-Id: {{api.ticketData.TicketId}} | Customer-Id: {{api.ticketData.CustomerId}}</p>
+
+            <table class="table mb-5">
+                <thead>
+                    <tr>
+                        <th>Flight details</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Flight Name : {{api.flightData.FlightName}}</td>
+                    </tr>
+                    <tr>
+                        <td>Source : {{api.flightData.Source}}</td>
+                    </tr>
+                    <tr>
+                        <td>Destination : {{api.flightData.Destination}}</td>
+                    </tr>
+                    <tr>
+                        <td>Departure : {{api.flightData.DepartureTime}} from {{api.flightData.Source}}</td>
+                    </tr>
+                    <tr>
+                        <td>Araival : {{api.flightData.AraivalTime}} at {{api.flightData.Destination}}</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Passenger details</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    <tr>
+                        <td>Name &nbsp;: {{api.ticketData.PassengerName}}</td>
+                    </tr>
+                    <tr>
+                        <td>Age &nbsp;: {{api.ticketData.Age}}</td>
+                    </tr>
+                    <tr>
+                        <td>Email : {{api.ticketData.PassengerEmail}}</td>
+                    </tr>
+                    <tr>
+                        <td>Phone : {{api.ticketData.PassengerPhone}}</td>
+                    </tr>
+                    <tr>
+                        <td>Gender : {{api.ticketData.Gender}}</td>
+                    </tr>
+                    <tr>
+                        <td>Address : {{api.ticketData.Address}}</td>
+                    </tr>
+                    <tr>
+                        <td>Journey Date : {{api.ticketData.JourneyDate}}</td>
+                    </tr>
+                    <tr>
+                        <td>Status : {{ticketStatus}}</td>
+                    </tr>
+                    <tr>
+                        <td>Total Fare : {{api.ticketData.TotalFare|currency:'INR'}}</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="d-flex justify-content-center mt-5">
+                <button class="btn btn-sm btn-light" (click)="printTicket()">
+                    Print Ticket
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

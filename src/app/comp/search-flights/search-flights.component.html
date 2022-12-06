@@ -1,0 +1,65 @@
+<div class="bgImg">
+
+</div>
+
+<div class="container">
+
+    <div class="row">
+        <div class="d-flex justify-content-center">
+            <div class="d-inline">
+
+                <input class="p-3 m-2 text-center rounded-3 " type="text" placeholder="Source" [(ngModel)]="source">
+
+                <input class="p-3 m-2 text-center rounded-3 " type="text" placeholder="Destination"
+                    [(ngModel)]="destination">
+
+                <input class="p-3 m-2 text-center rounded-3 " type="date" placeholder="Date" [(ngModel)]="bookingDate">
+
+                <button class="btn btn-primary btn-lg fw-bolder" (click)="showFlights()">
+                    Search
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class=" row">
+        <div *ngIf="searchButtonClicked">
+            <div *ngFor="let f of flights">
+                <div class="card m-2 py-1">
+                    <div class="d-flex justify-content-between align-items-center p-2">
+
+                        <div class="d-flex justify-content-start align-items-center">
+                            <img src="assets/image/flight_icon.jpg" style="height: 80px; width:auto; " alt="">
+                            <h4 class="textCenter m-1 ">{{f.FlightName}}<br>
+                            </h4>
+                        </div>
+
+                        <h5 class="text-center">{{f.Source}}<br>
+                            <h6>{{f.DepartureTime}}</h6>
+                            <img src="https://img.icons8.com/emoji/48/null/airplane-departure.png" />
+                        </h5>
+
+                        <h5 class="text-center">To</h5>
+
+                        <h5 class="text-center">{{f.Destination}}<br>
+                            <h6>{{f.AraivalTime}}</h6>
+                            <img src="https://img.icons8.com/emoji/48/null/airplane-arrival.png" />
+                        </h5>
+
+                    </div>
+
+                    <hr>
+
+                    <div class="d-flex justify-content-around align-items-center text-danger p-1">
+                        <h6 class="fs-6">Regular : {{f.GeneralFare|currency:'INR'}}</h6>
+                        <h6 class="fs-6">Premium Plus : {{f.PremiumPlus|currency:'INR'}}</h6>
+
+                        <button class="btn btn-success " (click)="bookTicket(f)">Book</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</div>

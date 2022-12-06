@@ -1,0 +1,49 @@
+<div class="row p-5 m-5 d-flex justify-content-end">
+
+    <div class="w-75" style="border-radius: 25px;">
+        <div class="row d-flex justify-content-end align-items-center">
+
+            <div class="col-md-4 text-primary fw-bolder">
+                <h4>Feel free to contact us !</h4>
+                <hr>
+                <h3>Call Us</h3>
+                (24x7 customer services) <br> 0124-2641407 / 020-26231407 / 1860 233 1407 <br>
+                ( from Mobile / landlines of most private telecom operators in India only. )
+                <hr>
+                <br>
+                <br>
+                <h3>Contact Us</h3>
+                Email : customer-support@ATR.com <br>
+                whatsapp no :9154195505. Send ' Hi ' on 9154195505
+                <hr>
+            </div>
+            <div class="col-md-5">
+
+                <div class="px-5 mt-5">
+
+                    <div class="form-outline form-white mb-2">
+                        <h6 for="name" class="text-white fw-bolder">Enter your full name</h6>
+                        <input type="text" id="typeEmailX" class="form-control form-control-sm"
+                            [(ngModel)]="api.feedbackData.FullName">
+                    </div>
+
+                    <div class="form-outline form-white mb-2">
+                        <h6 for="email" class="text-white fw-bolder">Enter your email</h6>
+                        <input type="email" id="typePasswordX" class="form-control form-control-sm"
+                            [(ngModel)]="api.feedbackData.Email">
+                    </div>
+
+                    <div class="form-outline form-white mb-2">
+                        <h6 for="message" class="text-white fw-bolder">Enter your message</h6>
+                        <textarea class="form-control form-control-sm" name="message" id="" rows="10"
+                            [(ngModel)]="api.feedbackData.Message"></textarea>
+                    </div>
+
+                    <button class="btn btn-primary mb-5" (click)="submitFeedback()">Submit</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</div>

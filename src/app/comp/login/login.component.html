@@ -1,0 +1,74 @@
+<div class="row p-5">
+    <div class="col d-flex justify-content-end align-items-center ">
+        <div class="col-md-4 m-5">
+            <div class="card bg-light " style="border-radius: 1rem;">
+                <div class="card-body p-4 text-center" *ngIf="!isRegister; else register">
+
+                    <div class="mb-md-5 mt-md-4 pb-5">
+                        <h4 class="mb-5">Login</h4>
+
+                        <div class="form-outline form-white mb-2">
+                            <input type="email" id="typeEmailX" class="form-control form-control-sm" placeholder="Email"
+                                [(ngModel)]="email" minlength="10">
+                        </div>
+
+                        <div class="form-outline form-white mb-2">
+                            <input type="password" id="typePasswordX" class="form-control form-control-sm"
+                                placeholder="Password" [(ngModel)]="password">
+                        </div>
+
+                        <p class="small mb-3 pb-sm-2"><a class="" routerLink="#!">Forgot
+                                password?</a></p>
+
+                        <button class="btn btn-primary btn-sm px-5" type="submit"
+                            (click)="loginToAccount()">Login</button>
+
+                    </div>
+
+                    <h6>Create new account ! <a class="text-danger mb-5" (click)="isRegister = true">New</a> </h6>
+
+                </div>
+
+                <ng-template #register>
+                    <div class="card-body p-4 text-center">
+
+                        <div class="mb-md-5 mt-md-4 pb-5">
+                            <h4 class="mb-5">Create Account</h4>
+
+                            <div class="form-outline form-white mb-2">
+                                <input type="text" id="typeUsername" class="form-control form-control-sm"
+                                    placeholder="Username" [(ngModel)]="api.userData.Name">
+                            </div>
+
+                            <div class="form-outline form-white mb-2">
+                                <input type="email" id="typeEmailX" class="form-control form-control-sm"
+                                    placeholder="Email" [(ngModel)]="api.userData.Email">
+                            </div>
+
+                            <div class="form-outline form-white mb-2">
+                                <input type="text" id="typePasswordX" class="form-control form-control-sm"
+                                    placeholder="Password" [(ngModel)]="api.userData.Password">
+                            </div>
+
+                            <div class="form-outline form-white mb-2">
+                                <input type="password" id="typePasswordX" class="form-control form-control-sm"
+                                    placeholder="Confirm password" [(ngModel)]="password">
+                            </div>
+
+                            <button class="btn btn-primary btn-sm px-5" type="submit"
+                                (click)="createNewAccount()">Register</button>
+
+                        </div>
+
+                        <h6>Already have an account ! <a class="text-danger mb-5" (click)="isRegister = false">Login</a>
+                        </h6>
+
+                    </div>
+                </ng-template>
+
+            </div>
+        </div>
+
+    </div>
+
+</div>

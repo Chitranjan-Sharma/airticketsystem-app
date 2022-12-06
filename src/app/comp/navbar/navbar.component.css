@@ -1,0 +1,16 @@
+img {
+    height: 40px;
+    width: 100px;
+}
+
+a:hover {
+    border: 2px solid blue;
+    border-radius: 10px;
+    background-color: rgb(3, 80, 153);
+}
+
+nav {
+    margin-top: 5px;
+    background-color: rgb(59, 86, 110);
+    border-radius: 10px;
+}

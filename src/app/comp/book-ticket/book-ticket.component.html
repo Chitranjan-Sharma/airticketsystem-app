@@ -1,0 +1,83 @@
+<div class="container text-white fw-bold">
+
+    <div class="row p-5 ">
+
+        <div class="col d-flex justify-content-end">
+            <div class="w-50 mx-5" *ngIf="api.flightData != null">
+                <p>Flight Details</p>
+                <hr>
+                <h6>Flight Name : {{api.flightData.FlightName}}</h6>
+                <hr>
+                <h6>Source : {{api.flightData.Source}}</h6>
+                <hr>
+                <h6>Destination : {{api.flightData.Destination}}</h6>
+                <hr>
+                <h6>Departure : {{api.flightData.DepartureTime}} from {{api.flightData.Source}}</h6>
+                <hr>
+                <h6>Araival : {{api.flightData.AraivalTime}} at {{api.flightData.Destination}}</h6>
+                <hr>
+                <br>
+
+                <div class="radio">
+                    <label class="fw-bold">
+                        General Fare: {{api.flightData.GeneralFare|currency:'INR'}}
+                        <input type="radio" name="fare" value="generalFare" (click)="setradio('generalFare')"
+                            [checked]='true' ngModel>
+                    </label>
+                </div>
+                <hr>
+                <div class="radio">
+                    <label class="fw-bold">
+                        Premium Plus: {{api.flightData.PremiumPlus|currency:'INR'}}
+                        <input type="radio" name="fare" value="premiumPlus" (click)="setradio('premiumPlus')" ngModel>
+                    </label>
+                </div>
+                <p>(Food / Entertainment screen will be provided in Premium plus !)</p>
+            </div>
+            <div class="w-50 m-1">
+
+                <p>Fill passenger details</p>
+
+                <div class="form-outline form-white mb-2">
+                    <label class="fw-bolder">Full Name</label>
+                    <input type="text" class="form-control form-control-sm" [(ngModel)]="ticket.PassengerName">
+                </div>
+
+                <div class="form-outline form-white mb-2">
+                    <label class="fw-bolder">Age (Default 18y)</label>
+                    <input type="number" class="form-control form-control-sm" [(ngModel)]="ticket.Age">
+                </div>
+
+                <div class="form-outline form-white mb-2">
+                    <label class="fw-bolder">Gender</label>
+                    <input type="text" class="form-control form-control-sm" [(ngModel)]="ticket.Gender">
+
+                </div>
+
+                <div class="form-outline form-white mb-2">
+                    <label class="fw-bolder">Contact Number</label>
+                    <input type="text" class="form-control form-control-sm" [(ngModel)]="ticket.PassengerPhone">
+                </div>
+
+                <div class="form-outline form-white mb-2">
+                    <label class="fw-bolder">Email</label>
+                    <input type="email" class="form-control form-control-sm" [(ngModel)]="ticket.PassengerEmail">
+                </div>
+
+                <div class="form-outline form-white mb-2">
+                    <label class="fw-bolder">Address</label>
+                    <textarea type="text" class="form-control form-control-sm" [(ngModel)]="ticket.Address"></textarea>
+                </div>
+
+                <div class="form-outline form-white mb-2 w-50">
+                    <label class="fw-bolder">Journey Date</label>
+                    <input type="date" class="form-control form-control-sm" [(ngModel)]="ticket.JourneyDate">
+                </div>
+
+                <button class="btn btn-danger" (click)="bookTicket()">Book Ticket</button>
+            </div>
+        </div>
+    </div>
+
+
+</div>

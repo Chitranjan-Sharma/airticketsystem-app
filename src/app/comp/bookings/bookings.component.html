@@ -1,0 +1,38 @@
+<div class="container">
+    <div class="justify-content-center">
+        <div *ngFor="let t of ticketList.reverse()">
+            <div *ngIf="t.CustomerId==api.userData.CustomerId && api.isLoggedIn">
+                <div class="card m-3">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between">
+                            <div class="d-flex justify-content-start  align-items-center">
+                                <h6>ID: {{t.TicketId}} |</h6>
+                                <h6>&nbsp;{{t.PassengerName}} |</h6>
+                                <h6>&nbsp;{{t.JourneyDate|date:'fullDate'}} |</h6>
+                                <h6 class="text-danger">&nbsp;{{t.TotalFare|currency:'INR'}}</h6>
+                            </div>
+
+                            <div class="d-flex justify-content-start align-items-center"
+                                *ngIf="t.Status; else alreadyCancelled">
+                                <button type="button" class="btn btn-link btn-sm text-danger fw-bolder"
+                                    (click)="cancelTicket(t)" style="text-decoration: none;">Cancel</button>
+                                <button type="button" class="btn btn-link btn-sm fw-bolder"
+                                    style="text-decoration: none;" (click)="viewInvoice(t)">View</button>
+                            </div>
+
+                            <ng-template #alreadyCancelled>
+                                <div class="d-flex justify-content-start align-items-center">
+                                    <button type="button" class="btn btn-link btn-sm text-danger fw-bolder"
+                                        disabled="true" style="text-decoration: none;">Cancelled</button>
+                                    <button type="button" class="btn btn-link btn-sm fw-bolder"
+                                        style="text-decoration: none;" (click)="viewInvoice(t)">View</button>
+                                </div>
+                            </ng-template>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

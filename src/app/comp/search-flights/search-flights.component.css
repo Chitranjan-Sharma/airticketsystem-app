@@ -1,8 +1,13 @@
+.textCenter {
+    text-align: center;
+    align-self: center;
+}
+
 .bgImg {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
-    height: 100vh;
+    height: fit-content;
     background-image: url('/assets/image/airoplane_image.jpg');
 }
