@@ -5,3 +5,12 @@
     background-size: cover;
     position: relative;
 }
+
+.lgBg {
+    border-radius: 1rem;
+    background-image: url("/assets/image/bgk.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: aliceblue;
+    opacity: 75%;
+}
