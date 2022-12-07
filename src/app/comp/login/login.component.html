@@ -2,7 +2,7 @@
     <div class="col d-flex justify-content-end align-items-end ">
         <div class="col-md-4 m-5">
             <div class="card bg-light " style="max-width: 350px;">
-                <div class="card-body p-4 text-center" *ngIf="!isRegister; else register">
+                <div class="card-body p-4 text-center" *ngIf="!api.isRegister; else register">
 
                     <div class="mb-md-5 mt-md-4 pb-5">
                         <h4 class="mb-5">Login</h4>
@@ -27,7 +27,7 @@
 
                     </div>
 
-                    <h6>Create new account ! <a class="text-danger mb-5" (click)="isRegister = true">New</a> </h6>
+                    <h6>Create new account ! <a class="text-danger mb-5" (click)="api.isRegister = true">New</a> </h6>
 
                 </div>
 
@@ -64,7 +64,8 @@
 
                         </div>
 
-                        <h6>Already have an account ! <a class="text-danger mb-5" (click)="isRegister = false">Login</a>
+                        <h6>Already have an account ! <a class="text-danger mb-5"
+                                (click)="api.isRegister = false">Login</a>
                         </h6>
 
                     </div>

@@ -1,20 +1,37 @@
-.home {
-    background-image: url(/assets/image/flight.jpg);
-    width: 100%;
-    height: 100vh;
-    background-position: bottom;
+.card_bg {
+    background-image: url('/assets/image/bgk.jpg');
+    height: 250px;
+    width: fit-content;
     background-size: cover;
-    padding-top: 400px;
-    justify-content: center;
+    display: flex;
+    justify-content: flex-start;
+    padding-right: 50%;
+}
+
+.card_bg2 {
+    background-image: url('/assets/image/plane_background.jpg');
+    height: 250px;
+    width: fit-content;
+    background-size: cover;
+    display: flex;
+    justify-content: flex-start;
+    padding-right: 50%;
+}
+
+.card_bg3 {
+    background-image: url('/assets/image/cts.jpg');
+    height: 250px;
+    width: fit-content;
+    background-size: cover;
+    display: flex;
+    justify-content: flex-start;
+    padding-right: 50%;
 }
 
 .pd {
+    padding-top: 100px;
     padding-left: 20px;
     padding-right: 20px;
-}
-
-.header-content h2 {
-    font-size: 4vmin;
 }
 
 .line {
@@ -25,16 +42,6 @@
     border-radius: 5px;
 }
 
-.header-content h3 {
-    font-size: 7vmin;
-    margin-top: 40px;
-    margin-bottom: 30px;
-}
-
-.card-thumbnail {
-    max-height: 250px;
-    overflow: hidden;
-}
 
 /* ------------mission--------------- */
 .imgSize {

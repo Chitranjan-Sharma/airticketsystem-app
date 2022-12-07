@@ -14,9 +14,6 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  isRegister: boolean = false;
-  isLoggedIn: boolean = false;
-
   email: string = '';
   password: string = '';
   userName: string = '';
@@ -27,7 +24,8 @@ export class LoginComponent implements OnInit {
       if (users != null) {
         users.forEach((e: any) => {
           if (e.Email == this.email && e.Password == this.password) {
-            this.isLoggedIn = true;
+
+            this.api.isLoggedIn = true;
             this.gotoSearchFlight();
             this.api.isLoggedIn = true;
             this.api.userData.CustomerId = e.CustomerId;
@@ -54,7 +52,7 @@ export class LoginComponent implements OnInit {
           this.api.userData.Name = '';
           this.api.userData.Password = '';
 
-          this.isRegister = false;
+          this.api.isRegister = false;
         },
           (error) => {
             console.log(error);

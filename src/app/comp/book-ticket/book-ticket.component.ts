@@ -59,6 +59,7 @@ export class BookTicketComponent implements OnInit {
       this.ticket.Address != '' && this.ticket.JourneyDate != '' && this.ticket.TotalFare != 0) {
       this.api.bookTicket(this.ticket).subscribe((res) => {
         alert("Ticket booked !");
+        this.api.ticketData = new Ticket;
       },
         (error) => {
           alert(error);

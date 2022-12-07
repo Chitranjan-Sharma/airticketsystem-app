@@ -12,6 +12,7 @@ import { Register } from '../models/register.model';
 })
 export class API {
   isLoggedIn: boolean = false;
+  isRegister: boolean = false;
 
   constructor(private http: HttpClient) { }
 
