@@ -47,6 +47,7 @@ export class LoginComponent implements OnInit {
   createNewAccount() {
     if (this.password == this.api.userData.Password) {
       if (this.api.userData.Email != '' && this.api.userData.Password != '' && this.api.userData.Name != '') {
+        console.log(this.api.userData);
 
         this.api.postData().subscribe((res) => {
           this.api.userData.Email = '';

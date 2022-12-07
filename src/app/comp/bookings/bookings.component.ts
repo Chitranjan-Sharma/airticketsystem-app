@@ -16,11 +16,10 @@ export class BookingsComponent implements OnInit {
   tickets: Ticket[] = [];
 
   ngOnInit(): void {
-    this.getTickets();
-
     if (!this.api.isLoggedIn) {
       this.router.navigate(["comp/login"]);
     }
+    this.getTickets();
   }
 
   viewInvoice(ticket: Ticket) {
@@ -33,6 +32,7 @@ export class BookingsComponent implements OnInit {
     this.tickets = [];
     this.api.getBookings().subscribe((res) => {
       this.ticketList = res as Ticket[];
+      console.log(res);
     },
       (err) => {
         console.log(err);
@@ -43,6 +43,8 @@ export class BookingsComponent implements OnInit {
         this.tickets.push(element);
       }
     });
+    this.ticketList = [];
+    this.ticketList = this.tickets;
   }
 
   cancelTicket(ticket: Ticket) {
