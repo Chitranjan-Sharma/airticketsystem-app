@@ -10,7 +10,7 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarText">
-            <ul class="navbar-nav me-auto mb-1 mb-lg-0 ">
+            <ul class="navbar-nav me-auto mb-1 mb-lg-0 " *ngIf="!api.isAdminLoggedIn; else adminNavbar">
                 <li class="nav-item mx-2">
                     <a class="nav-link text-white " aria-current="page" routerLink="/">Home</a>
                 </li>
@@ -43,7 +43,7 @@
                         <a class="nav-link p-2 text-white" routerLink="comp/login" (click)="logOut()"><img
                                 src="https://img.icons8.com/fluency/48/null/logout-rounded.png"
                                 style="width: 24px; height: 24px;" />
-                            Log Out
+                            User Logout
                         </a>
                     </ng-template>
                 </li>
@@ -52,3 +52,26 @@
         </div>
     </div>
 </nav>
+
+<ng-template #adminNavbar>
+
+    <ul class="navbar-nav me-auto mb-1 mb-lg-0 ">
+
+        <li class="nav-item mx-2">
+            <a class="nav-link  text-white" routerLink="admin/customers">Customers</a>
+        </li>
+
+        <li class="nav-item mx-2">
+            <a class="nav-link  text-white" routerLink="admin/flights">Flights</a>
+        </li>
+
+        <li class="nav-item mx-2">
+            <a class="nav-link  text-white" routerLink="admin/admin-bookings">Bookings</a>
+        </li>
+        <li class="nav-item mx-2">
+            <a class="nav-link text-white" routerLink="admin/feedbacks">Feedbacks</a>
+        </li>
+    </ul>
+
+
+</ng-template>

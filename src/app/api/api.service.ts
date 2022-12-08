@@ -13,7 +13,8 @@ import { Register } from '../models/register.model';
 export class API {
   isLoggedIn: boolean = false;
   isRegister: boolean = false;
-  isTicketBooked:boolean = false;
+  isTicketBooked: boolean = false;
+  isAdminLoggedIn: boolean = false;
 
   constructor(private http: HttpClient) { }
 
@@ -26,6 +27,7 @@ export class API {
 
   flightDetailList: FlightDetail[] = [];
 
+  //Customer api implementations
   postData() {
     return this.http.post(this.baseUrl + "/Customers", this.userData);
   }
@@ -34,6 +36,15 @@ export class API {
     return this.http.get(this.baseUrl + "/Customers");
   }
 
+  putUserData(u: Register) {
+    return this.http.put(this.baseUrl + "/Customers/" + u.CustomerId, u);
+  }
+
+  deleteUser(id: number) {
+    return this.http.delete(this.baseUrl + "/Customers/" + id);
+  }
+
+  //Ticket book api connections
   bookTicket(ticket: Ticket) {
     return this.http.post(this.baseUrl + "/Tickets", ticket);
   }
@@ -42,6 +53,15 @@ export class API {
     return this.http.get(this.baseUrl + "/Tickets");
   }
 
+  putBookings(t: Ticket) {
+    return this.http.put(this.baseUrl + "/Tickets/" + t.TicketId, t);
+  }
+
+  deleteBookings(id: number) {
+    return this.http.delete(this.baseUrl + "/Tickets/" + id);
+  }
+
+  //Flights api connections
   getFlightData() {
     this.http.get(this.baseUrl + "/Flights").subscribe((res) => {
       this.flightDetailList = res as FlightDetail[];
@@ -50,6 +70,18 @@ export class API {
       (error) => {
         console.log(error);
       });
+  }
+
+  postFlights(f: FlightDetail) {
+    return this.http.post(this.baseUrl + "/Flights", f);
+  }
+
+  putFlight(f: FlightDetail) {
+    return this.http.put(this.baseUrl + "/Flights/" + f.FlightId, f);
+  }
+
+  deleteFlight(id: number) {
+    return this.http.delete(this.baseUrl + "/Flights/" + id);
   }
 
   getFlightDataById(id: number) {
@@ -62,8 +94,13 @@ export class API {
       });
   }
 
+  //Feedback api implementation
   postFeedback() {
     return this.http.post(this.baseUrl + "/Feedbacks", this.feedbackData);
+  }
+
+  getFeedbacks() {
+    return this.http.get(this.baseUrl + "/Feedbacks");
   }
 
   getTicketBYId(id: number) {
@@ -74,4 +111,7 @@ export class API {
     return this.http.put(this.baseUrl + "/Tickets/" + ticket.TicketId, ticket);
   }
 
+  fetchAdmins() {
+    return this.http.get(this.baseUrl + "/Admins");
+  }
 }

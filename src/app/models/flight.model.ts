@@ -5,6 +5,6 @@ export class FlightDetail {
     Destination: string = '';
     DepartureTime: string = '';
     AraivalTime: string = '';
-    GeneralFare: any;
-    PremiumPlus: any;
+    GeneralFare: number = 0;
+    PremiumPlus: number = 0;
 }

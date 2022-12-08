@@ -18,6 +18,11 @@ export class LoginComponent implements OnInit {
   password: string = '';
   userName: string = '';
 
+  adminLogin() {
+    this.router.navigate(["comp/admin"]);
+    this.api.getFlightData();
+  }
+
   loginToAccount() {
     this.api.getUserData().subscribe((res) => {
       let users: any = res;
@@ -28,6 +33,8 @@ export class LoginComponent implements OnInit {
             this.api.isLoggedIn = true;
             this.gotoSearchFlight();
             this.api.isLoggedIn = true;
+            this.api.isAdminLoggedIn = false;
+
             this.api.userData.CustomerId = e.CustomerId;
             this.api.ticketData.CustomerId = e.CustomerId;
             this.api.feedbackData.CustomerId = this.api.userData.CustomerId;

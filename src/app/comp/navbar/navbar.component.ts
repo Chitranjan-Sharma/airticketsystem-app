@@ -17,5 +17,6 @@ export class NavbarComponent implements OnInit {
 
   logOut() {
     this.api.isLoggedIn = false;
+    this.api.isAdminLoggedIn = false;
   }
 }

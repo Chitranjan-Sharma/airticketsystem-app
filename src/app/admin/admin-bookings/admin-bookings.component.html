@@ -1,0 +1,118 @@
+<div class="row d-flex justify-content-center p-4">
+
+    <div class="card p-5 mx-2" style="width: 70%;">
+
+
+        <div class="form-outline form-white mb-1 d-flex justify-content-end">
+            <span>
+                <button class="btn btn-sm btn-primary" (click)="fetchAllBookings()">View All</button>
+            </span>
+            <input type="text" class="form-control form-control-sm mx-2" style="width: 250px;"
+                placeholder="Search here ..." [(ngModel)]="searchByData" required>
+            <span>
+                <img src="https://img.icons8.com/ios-glyphs/30/null/search--v1.png" (click)="searchTickets()" />
+            </span>
+        </div>
+
+        <div scrollSpyContent="DIV" class="container">
+            <div class="content">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Id</th>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Phone</th>
+                            <th>Gender</th>
+                            <th>Age</th>
+                            <th>Address</th>
+                            <th>MM/DD/YY</th>
+                            <th>Fare("INR")</th>
+                            <th>Status</th>
+                            <th>Delete</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let t of searchedTicketList">
+                            <td (click)="updateData(t)">{{t.TicketId}}</td>
+                            <td (click)="updateData(t)">{{t.PassengerName}}</td>
+                            <td (click)="updateData(t)">{{t.PassengerEmail}}</td>
+                            <td (click)="updateData(t)">{{t.PassengerPhone}}</td>
+                            <td (click)="updateData(t)">{{t.Gender}}</td>
+                            <td (click)="updateData(t)">{{t.Age}}</td>
+                            <td (click)="updateData(t)">{{t.Address}}</td>
+                            <td (click)="updateData(t)">{{t.JourneyDate|date:'shortDate'}}</td>
+                            <td (click)="updateData(t)">{{t.TotalFare|currency:'INR'}}</td>
+
+                            <td (click)="updateData(t)" *ngIf="t.Status; else alreadyCanceled">Booked</td>
+
+                            <ng-template #alreadyCanceled>
+                                <td (click)="updateData(t)" class="text-danger">Canceled</td>
+                            </ng-template>
+
+                            <td (click)="deleteBooking(t.TicketId)">
+                                <img src="https://img.icons8.com/fluency/24/null/delete-property.png" />
+                            </td>
+                        </tr>
+                    </tbody>
+
+
+                </table>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="card p-5 mx-2" style="width: 20%; height: fit-content;">
+        <div class="mb-md-5">
+            <h4 class="mb-5 text-center">Booking details</h4>
+
+            <div class="form-outline form-white mb-2">
+
+                <input type="text" class="form-control form-control-sm" placeholder="Passenger Name"
+                    [(ngModel)]="ticket.PassengerName" minlength="6" required>
+
+            </div>
+
+            <div class="form-outline form-white mb-2">
+                <input type="text" class="form-control form-control-sm" placeholder="Passenger Email"
+                    [(ngModel)]="ticket.PassengerEmail" minlength="2" required>
+            </div>
+
+            <div class="form-outline form-white mb-2">
+                <input type="text" class="form-control form-control-sm" placeholder="Passenger Phone"
+                    [(ngModel)]="ticket.PassengerPhone" minlength="2" required>
+            </div>
+
+            <div class="form-outline form-white mb-2">
+                <input type="text" class="form-control form-control-sm" placeholder="Gender" [(ngModel)]="ticket.Gender"
+                    minlength="2" required>
+            </div>
+
+            <div class="form-outline form-white mb-2">
+                <input type="text" class="form-control form-control-sm" placeholder="Age" [(ngModel)]="ticket.Age"
+                    minlength="2" required>
+            </div>
+
+            <div class="form-outline form-white mb-2">
+                <input type="text" class="form-control form-control-sm" placeholder="Address"
+                    [(ngModel)]="ticket.Address" minlength="2" required>
+            </div>
+
+            <div class="form-outline form-white mb-2">
+                <input type="text" class="form-control form-control-sm" placeholder="Journey Date"
+                    [(ngModel)]="ticket.JourneyDate" minlength="2" required>
+            </div>
+
+            <div class="form-outline form-white">
+                <input type="text" class="form-control form-control-sm" placeholder="Totalfare"
+                    [(ngModel)]="ticket.TotalFare" minlength="2" required>
+            </div>
+
+        </div>
+
+        <button class="btn btn-primary mb-2" (click)="cancelBookingData()">Cancel Booking</button>
+        <button class="btn btn-primary" (click)="updateBookingData()">Update Booking</button>
+
+    </div>
+</div>

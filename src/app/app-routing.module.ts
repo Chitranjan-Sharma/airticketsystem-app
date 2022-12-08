@@ -1,6 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AdminBookingsComponent } from './admin/admin-bookings/admin-bookings.component';
+import { CustomersComponent } from './admin/customers/customers.component';
+import { FeedbacksComponent } from './admin/feedbacks/feedbacks.component';
+import { FlightsComponent } from './admin/flights/flights.component';
 import { AboutComponent } from './comp/about/about.component';
+import { AdminComponent } from './comp/admin/admin.component';
 import { BookTicketComponent } from './comp/book-ticket/book-ticket.component';
 import { BookingsComponent } from './comp/bookings/bookings.component';
 import { ContactComponent } from './comp/contact/contact.component';
@@ -21,7 +26,12 @@ const routes: Routes = [
   { path: 'comp/searchFlights', component: SearchFlightsComponent },
   { path: 'comp/bookings', component: BookingsComponent },
   { path: 'comp/invoice', component: InvoiceComponent },
-  { path: 'comp/payment', component: PaymentComponent }
+  { path: 'comp/payment', component: PaymentComponent },
+  { path: 'comp/admin', component: AdminComponent },
+  { path: 'admin/customers', component: CustomersComponent },
+  { path: 'admin/flights', component: FlightsComponent },
+  { path: 'admin/admin-bookings', component:  AdminBookingsComponent},
+  { path: 'admin/feedbacks', component: FeedbacksComponent }
 ];
 
 @NgModule({

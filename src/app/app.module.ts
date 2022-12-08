@@ -15,6 +15,11 @@ import { HomeComponent } from './comp/home/home.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { PaymentComponent } from './comp/payment/payment.component';
+import { AdminComponent } from './comp/admin/admin.component';
+import { CustomersComponent } from './admin/customers/customers.component';
+import { FlightsComponent } from './admin/flights/flights.component';
+import { FeedbacksComponent } from './admin/feedbacks/feedbacks.component';
+import { AdminBookingsComponent } from './admin/admin-bookings/admin-bookings.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +33,12 @@ import { PaymentComponent } from './comp/payment/payment.component';
     NavbarComponent,
     SearchFlightsComponent,
     HomeComponent,
-    PaymentComponent
+    PaymentComponent,
+    AdminComponent,
+    CustomersComponent,
+    FlightsComponent,
+    FeedbacksComponent,
+    AdminBookingsComponent
   ],
   imports: [
     BrowserModule,

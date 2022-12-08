@@ -1,0 +1,100 @@
+<div class="row d-flex justify-content-center p-4">
+
+    <div class="card p-5 mx-2" style="width: 70%;">
+
+        <div class="form-outline form-white mb-1 d-flex justify-content-end">
+            <span>
+                <button class="btn btn-sm btn-primary" (click)="fetchAllFlights()">View All</button>
+            </span>
+            <input type="text" class="form-control form-control-sm mx-2" style="width: 250px;"
+                placeholder="Search here ..." [(ngModel)]="searchByData" required>
+            <span>
+                <img src="https://img.icons8.com/ios-glyphs/30/null/search--v1.png" (click)="searchFlights()" />
+            </span>
+        </div>
+
+        <div scrollSpyContent="DIV" class="container">
+            <div class="content">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Id</th>
+                            <th>Fligh Name</th>
+                            <th>Source</th>
+                            <th>Destination</th>
+                            <th>Departure</th>
+                            <th>Araival</th>
+                            <th>General Fare</th>
+                            <th>Premium Fare</th>
+                            <th>Delete</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let f of allFlights">
+                            <td (click)="updateData(f)">{{f.FlightId}}</td>
+                            <td (click)="updateData(f)">{{f.FlightName}}</td>
+                            <td (click)="updateData(f)">{{f.Source}}</td>
+                            <td (click)="updateData(f)">{{f.Destination}}</td>
+                            <td (click)="updateData(f)">{{f.DepartureTime}}</td>
+                            <td (click)="updateData(f)">{{f.AraivalTime}}</td>
+                            <td (click)="updateData(f)">{{f.GeneralFare|currency:'INR'}}</td>
+                            <td (click)="updateData(f)">{{f.PremiumPlus|currency:'INR'}}</td>
+                            <td (click)="deleteFlight(f.FlightId)">
+                                <img src="https://img.icons8.com/fluency/24/null/delete-property.png" />
+                            </td>
+                        </tr>
+                    </tbody>
+
+                </table>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="card p-5 mx-2" style="width: 20%; height: fit-content;">
+        <div class="mb-md-5">
+            <h4 class="mb-5 text-center">Flight details</h4>
+
+            <div class="form-outline form-white mb-2">
+
+                <input type="text" class="form-control form-control-sm" placeholder="Flight Name"
+                    [(ngModel)]="flight.FlightName" minlength="6" required>
+
+            </div>
+
+            <div class="form-outline form-white mb-2">
+                <input type="text" class="form-control form-control-sm" placeholder="Source" [(ngModel)]="flight.Source"
+                    minlength="2" required>
+            </div>
+
+            <div class="form-outline form-white mb-2">
+                <input type="text" class="form-control form-control-sm" placeholder="Destination"
+                    [(ngModel)]="flight.Destination" minlength="2" required>
+            </div>
+
+            <div class="form-outline form-white mb-2">
+                <input type="text" class="form-control form-control-sm" placeholder="Departure Time"
+                    [(ngModel)]="flight.DepartureTime" minlength="2" required>
+            </div>
+
+            <div class="form-outline form-white mb-2">
+                <input type="text" class="form-control form-control-sm" placeholder="Araival Time"
+                    [(ngModel)]="flight.AraivalTime" minlength="2" required>
+            </div>
+
+            <div class="form-outline form-white mb-2">
+                <input type="text" class="form-control form-control-sm" placeholder="General Fare"
+                    [(ngModel)]="flight.GeneralFare" minlength="2" required>
+            </div>
+
+            <div class="form-outline form-white">
+                <input type="text" class="form-control form-control-sm" placeholder="Premium Fare"
+                    [(ngModel)]="flight.PremiumPlus" minlength="2" required>
+            </div>
+        </div>
+
+        <button class="btn btn-primary mb-3" (click)="addFlighData()">Add Flight</button>
+        <button class="btn btn-primary mb-5" (click)="putFlighData()">Update Flight</button>
+
+    </div>
+</div>

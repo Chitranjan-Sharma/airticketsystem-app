@@ -28,7 +28,8 @@
                     </div>
 
                     <h6>Create new account ! <a class="text-danger mb-5" (click)="api.isRegister = true">New</a> </h6>
-
+                    <h6>Login as admin ! <a class="text-danger mb-5" (click)="adminLogin()">Login</a>
+                    </h6>
                 </div>
 
                 <ng-template #register>
@@ -66,8 +67,11 @@
                                 (click)="api.isRegister = false">Login</a>
                         </h6>
 
+
                     </div>
                 </ng-template>
+
+
 
             </div>
         </div>

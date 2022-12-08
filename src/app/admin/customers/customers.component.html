@@ -1,0 +1,75 @@
+<div class="row d-flex justify-content-center p-4">
+
+    <div class="card p-5 mx-2" style="width: 70%;">
+
+        <div class="form-outline form-white mb-1 d-flex justify-content-end">
+            <span>
+                <button class="btn btn-sm btn-primary" (click)="fetchAllFlights()">View All</button>
+            </span>
+            <input type="text" class="form-control form-control-sm mx-2" style="width: 250px;"
+                placeholder="Search here ..." [(ngModel)]="searchByData" required>
+            <span>
+                <img src="https://img.icons8.com/ios-glyphs/30/null/search--v1.png" (click)="searchFlights()" />
+            </span>
+        </div>
+
+        <div scrollSpyContent="DIV" class="container">
+            <div class="content">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Id</th>
+                            <th>Customer Name</th>
+                            <th>Customer Email</th>
+
+                            <th>Delete</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let c of customers">
+                            <td (click)="updateData(c)">{{c.CustomerId}}</td>
+                            <td (click)="updateData(c)">{{c.Name}}</td>
+                            <td (click)="updateData(c)">{{c.Email}}</td>
+
+                            <td (click)="deleteCustomer(c.CustomerId)">
+                                <img src="https://img.icons8.com/fluency/24/null/delete-property.png" />
+                            </td>
+                        </tr>
+                    </tbody>
+
+                </table>
+            </div>
+
+        </div>
+        <div class="row d-flex justify-content-end py-3">
+
+            <div class="form-outline form-white col-md-2">
+
+                <input type="text" class="form-control" placeholder="Customer Details :" disabled>
+
+            </div>
+            <div class="form-outline form-white col-md-1">
+
+                <input type="text" class="form-control" placeholder="Customer Id" [(ngModel)]="customer.CustomerId"
+                    disabled="true" required>
+
+            </div>
+
+            <div class="form-outline form-white col-md-3 ">
+                <input type="text" class="form-control" placeholder="Customer Name" [(ngModel)]="customer.Name"
+                    required>
+            </div>
+
+            <div class="form-outline form-white col-md-3">
+                <input type="text" class="form-control" placeholder="Customer Email" [(ngModel)]="customer.Email"
+                    required>
+            </div>
+
+            <div class="form-outline form-white col-md-2">
+                <button class="btn btn-primary" (click)="putCustomerData()">Update Data</button>
+            </div>
+
+        </div>
+    </div>
+
+</div>

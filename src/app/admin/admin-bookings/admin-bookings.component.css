@@ -1,0 +1,13 @@
+div.container {
+    padding: 5px;
+    height: 30em;
+    overflow-y: scroll;
+    width: 100%;
+    border: 2px solid rgb(224, 224, 226);
+    border-radius: 5px;
+}
+
+div.content {
+
+    height: 100%;
+}
