@@ -21,7 +21,7 @@ export class LoginComponent implements OnInit {
   loginToAccount() {
     this.api.getUserData().subscribe((res) => {
       let users: any = res;
-      if (users != null) {
+      if (users != null && this.email.includes("@")) {
         users.forEach((e: any) => {
           if (e.Email == this.email && e.Password == this.password) {
 
@@ -44,7 +44,7 @@ export class LoginComponent implements OnInit {
 
   createNewAccount() {
     if (this.password == this.api.userData.Password) {
-      if (this.api.userData.Email != '' && this.api.userData.Password != '' && this.api.userData.Name != '') {
+      if (this.api.userData.Email != '' && this.email.includes("@") && this.api.userData.Password != '' && this.api.userData.Name != '') {
         console.log(this.api.userData);
 
         this.api.postData().subscribe((res) => {

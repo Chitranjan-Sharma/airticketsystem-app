@@ -55,7 +55,7 @@ export class BookTicketComponent implements OnInit {
 
   postTicketData() {
     if (this.ticket.PassengerName != '' && this.ticket.Gender != '' &&
-      this.ticket.PassengerEmail != '' && this.ticket.PassengerPhone != '' &&
+      this.ticket.PassengerEmail != '' && this.ticket.PassengerEmail.includes("@") && this.ticket.PassengerPhone != '' &&
       this.ticket.Address != '' && this.ticket.JourneyDate != '' && this.ticket.TotalFare != 0) {
       this.api.bookTicket(this.ticket).subscribe((res) => {
         alert("Ticket booked !");

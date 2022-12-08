@@ -9,14 +9,14 @@
 
                         <div class="form-outline form-white mb-2">
 
-                            <input type="email" id="typeEmailX" class="form-control form-control-sm"
-                                placeholder="example@demo.com" [(ngModel)]="email" email="true" minlength="6" required>
+                            <input type="email" class="form-control form-control-sm" placeholder="example@demo.com"
+                                [(ngModel)]="email" email="true" minlength="6" required>
 
                         </div>
 
                         <div class="form-outline form-white mb-2">
-                            <input type="password" id="typePasswordX" class="form-control form-control-sm"
-                                placeholder="Password" [(ngModel)]="password" minlength="6" maxlength="16" required>
+                            <input type="password" class="form-control form-control-sm" placeholder="Password"
+                                [(ngModel)]="password" minlength="6" maxlength="16" required>
                         </div>
 
                         <p class="small mb-3 pb-sm-2"><a class="" routerLink="#!">Forgot
@@ -38,24 +38,22 @@
                             <h4 class="mb-5">Create Account</h4>
 
                             <div class="form-outline form-white mb-2">
-                                <input type="text" id="typeUsername" class="form-control form-control-sm"
-                                    placeholder="Enter username" [(ngModel)]="api.userData.Name" minlength="6" required>
+                                <input type="text" class="form-control form-control-sm" placeholder="Enter username"
+                                    [(ngModel)]="api.userData.Name" minlength="6" required>
                             </div>
 
                             <div class="form-outline form-white mb-2">
-                                <input type="email" id="typeEmailX" class="form-control form-control-sm"
-                                    placeholder="Enter email" [(ngModel)]="api.userData.Email" minlength="6" required
-                                    email="true">
+                                <input type="email" class="form-control form-control-sm" placeholder="Enter email"
+                                    [(ngModel)]="api.userData.Email" minlength="6" required email="true">
                             </div>
 
                             <div class="form-outline form-white mb-2">
-                                <input type="text" id="typePasswordX" class="form-control form-control-sm"
-                                    placeholder="Enter password" [(ngModel)]="api.userData.Password" minlength="6"
-                                    required>
+                                <input type="text" class="form-control form-control-sm" placeholder="Enter password"
+                                    [(ngModel)]="api.userData.Password" minlength="6" required>
                             </div>
 
                             <div class="form-outline form-white mb-2">
-                                <input type="password" id="typePasswordX" class="form-control form-control-sm"
+                                <input type="password" class="form-control form-control-sm"
                                     placeholder="Confirm password" [(ngModel)]="password" minlength="6" required>
                             </div>
 

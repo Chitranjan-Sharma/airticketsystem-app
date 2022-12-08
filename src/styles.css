@@ -14,3 +14,27 @@ body {
 footer {
     margin-top: auto;
 }
+
+.red-color {
+    color: red;
+}
+
+.green-color {
+    color: green;
+}
+
+input.ng-valid {
+    border-color: lightgreen;
+}
+
+input.ng-touched.ng-invalid {
+    border-color: red;
+}
+
+textarea.ng-valid {
+    border-color: lightgreen;
+}
+
+textarea.ng-touched.ng-invalid {
+    border-color: red;
+}

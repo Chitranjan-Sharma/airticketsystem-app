@@ -22,14 +22,15 @@
                     <label class="fw-bold">
                         General Fare: {{api.flightData.GeneralFare|currency:'INR'}}
                         <input type="radio" name="fare" value="generalFare" (click)="setradio('generalFare')"
-                            [checked]='true' ngModel>
+                            [checked]='true' ngModel required>
                     </label>
                 </div>
                 <hr>
                 <div class="radio">
                     <label class="fw-bold">
                         Premium Plus: {{api.flightData.PremiumPlus|currency:'INR'}}
-                        <input type="radio" name="fare" value="premiumPlus" (click)="setradio('premiumPlus')" ngModel>
+                        <input type="radio" name="fare" value="premiumPlus" (click)="setradio('premiumPlus')" ngModel
+                            required>
                     </label>
                 </div>
                 <p>(Food / Entertainment screen will be provided in Premium plus !)</p>
@@ -40,38 +41,43 @@
 
                 <div class="form-outline form-white mb-2">
                     <label class="fw-bolder">Full Name</label>
-                    <input type="text" class="form-control form-control-sm" [(ngModel)]="ticket.PassengerName">
+                    <input type="text" class="form-control form-control-sm" minlength="5"
+                        [(ngModel)]="ticket.PassengerName" required>
                 </div>
 
                 <div class="form-outline form-white mb-2">
                     <label class="fw-bolder">Age (Default 18y)</label>
-                    <input type="number" class="form-control form-control-sm" [(ngModel)]="ticket.Age">
+                    <input type="number" class="form-control form-control-sm" [(ngModel)]="ticket.Age" required>
                 </div>
 
                 <div class="form-outline form-white mb-2">
                     <label class="fw-bolder">Gender</label>
-                    <input type="text" class="form-control form-control-sm" [(ngModel)]="ticket.Gender">
+                    <input type="text" class="form-control form-control-sm" minlength="1" [(ngModel)]="ticket.Gender"
+                        required>
 
                 </div>
 
                 <div class="form-outline form-white mb-2">
                     <label class="fw-bolder">Contact Number</label>
-                    <input type="text" class="form-control form-control-sm" [(ngModel)]="ticket.PassengerPhone">
+                    <input type="text" class="form-control form-control-sm" [(ngModel)]="ticket.PassengerPhone"
+                        minlength="10" required>
                 </div>
 
                 <div class="form-outline form-white mb-2">
                     <label class="fw-bolder">Email</label>
-                    <input type="email" class="form-control form-control-sm" [(ngModel)]="ticket.PassengerEmail">
+                    <input type="email" class="form-control form-control-sm" [(ngModel)]="ticket.PassengerEmail"
+                        minlength="6" required>
                 </div>
 
                 <div class="form-outline form-white mb-2">
                     <label class="fw-bolder">Address</label>
-                    <textarea type="text" class="form-control form-control-sm" [(ngModel)]="ticket.Address"></textarea>
+                    <textarea type="text" class="form-control form-control-sm" minlength="10"
+                        [(ngModel)]="ticket.Address" required></textarea>
                 </div>
 
                 <div class="form-outline form-white mb-2 w-50">
                     <label class="fw-bolder">Journey Date</label>
-                    <input type="date" class="form-control form-control-sm" [(ngModel)]="ticket.JourneyDate">
+                    <input type="date" class="form-control form-control-sm" [(ngModel)]="ticket.JourneyDate" required>
                 </div>
 
                 <button class="btn btn-danger" (click)="bookTicket()">Book Ticket</button>

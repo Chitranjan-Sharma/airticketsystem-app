@@ -6,10 +6,10 @@ import { FlightDetail } from '../models/flight.model';
 import { Feedback } from '../models/feedback.model';
 import { Register } from '../models/register.model';
 
-
 @Injectable({
   providedIn: 'root'
 })
+
 export class API {
   isLoggedIn: boolean = false;
   isRegister: boolean = false;
@@ -22,11 +22,8 @@ export class API {
   ticketData: Ticket = new Ticket;
   feedbackData: Feedback = new Feedback;
   flightData: FlightDetail = new FlightDetail;
-  
 
   flightDetailList: FlightDetail[] = [];
-  
-
 
   postData() {
     return this.http.post(this.baseUrl + "/Customers", this.userData);
