@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { API } from 'src/app/api/api.service';
 
 import { Ticket } from 'src/app/models/ticket.model';
@@ -10,7 +11,7 @@ import { Ticket } from 'src/app/models/ticket.model';
 })
 export class BookTicketComponent implements OnInit {
 
-  constructor(public api: API) { }
+  constructor(public api: API, public router: Router) { }
 
   ticket: Ticket = new Ticket;
 
@@ -60,6 +61,8 @@ export class BookTicketComponent implements OnInit {
       this.api.bookTicket(this.ticket).subscribe((res) => {
         alert("Ticket booked !");
         this.api.ticketData = new Ticket;
+        this.api.isTicketBooked = true;
+        this.router.navigate(["comp/payment"]);
       },
         (error) => {
           alert(error);

@@ -14,6 +14,7 @@ import { SearchFlightsComponent } from './comp/search-flights/search-flights.com
 import { HomeComponent } from './comp/home/home.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { PaymentComponent } from './comp/payment/payment.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { HttpClientModule } from '@angular/common/http';
     InvoiceComponent,
     NavbarComponent,
     SearchFlightsComponent,
-    HomeComponent
+    HomeComponent,
+    PaymentComponent
   ],
   imports: [
     BrowserModule,

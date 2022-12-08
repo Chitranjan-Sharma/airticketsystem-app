@@ -1,4 +1,6 @@
-import { Component,OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { API } from 'src/app/api/api.service';
 
 @Component({
   selector: 'app-navbar',
@@ -8,9 +10,12 @@ import { Component,OnInit } from '@angular/core';
 
 export class NavbarComponent implements OnInit {
 
-  constructor() { }
+  constructor(public api: API, public router: Router) { }
 
   ngOnInit(): void {
   }
 
+  logOut() {
+    this.api.isLoggedIn = false;
+  }
 }

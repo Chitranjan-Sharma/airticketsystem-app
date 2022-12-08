@@ -23,20 +23,20 @@
 
                     <div class="form-outline form-white mb-2">
                         <h6 for="name" class="text-white fw-bolder">Enter your full name</h6>
-                        <input type="text" id="typeEmailX" class="form-control form-control-sm"
-                            [(ngModel)]="api.feedbackData.FullName">
+                        <input type="text" class="form-control form-control-sm" [(ngModel)]="api.feedbackData.FullName"
+                            minlength="5" required>
                     </div>
 
                     <div class="form-outline form-white mb-2">
                         <h6 for="email" class="text-white fw-bolder">Enter your email</h6>
-                        <input type="email" id="typePasswordX" class="form-control form-control-sm"
-                            [(ngModel)]="api.feedbackData.Email">
+                        <input type="email" class="form-control form-control-sm" [(ngModel)]="api.feedbackData.Email"
+                            minlength="5" required>
                     </div>
 
                     <div class="form-outline form-white mb-2">
                         <h6 for="message" class="text-white fw-bolder">Enter your message</h6>
-                        <textarea class="form-control form-control-sm" name="message" id="" rows="10"
-                            [(ngModel)]="api.feedbackData.Message"></textarea>
+                        <textarea class="form-control form-control-sm" name="message" rows="10"
+                            [(ngModel)]="api.feedbackData.Message" minlength="5" required></textarea>
                     </div>
 
                     <button class="btn btn-primary mb-5" (click)="submitFeedback()">Submit</button>

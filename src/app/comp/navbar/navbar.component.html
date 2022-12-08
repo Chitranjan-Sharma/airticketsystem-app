@@ -33,11 +33,19 @@
 
             <ul class="nav navbar-nav navbar-right mx-3">
                 <li>
-                    <a class="nav-link p-2 text-white" routerLink="comp/login"><img
+                    <a class="nav-link p-2 text-white" routerLink="comp/login"
+                        *ngIf="!api.isLoggedIn; else alreadyLoggedIn"><img
                             src="https://img.icons8.com/fluency/48/null/login-rounded.png"
                             style="width: 24px; height: 24px;" />
                         Login
                     </a>
+                    <ng-template #alreadyLoggedIn>
+                        <a class="nav-link p-2 text-white" routerLink="comp/login" (click)="logOut()"><img
+                                src="https://img.icons8.com/fluency/48/null/logout-rounded.png"
+                                style="width: 24px; height: 24px;" />
+                            Log Out
+                        </a>
+                    </ng-template>
                 </li>
             </ul>
 

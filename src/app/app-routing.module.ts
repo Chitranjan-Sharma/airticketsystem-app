@@ -8,6 +8,7 @@ import { ContactComponent } from './comp/contact/contact.component';
 import { HomeComponent } from './comp/home/home.component';
 import { InvoiceComponent } from './comp/invoice/invoice.component';
 import { LoginComponent } from './comp/login/login.component';
+import { PaymentComponent } from './comp/payment/payment.component';
 
 import { SearchFlightsComponent } from './comp/search-flights/search-flights.component'
 
@@ -20,6 +21,7 @@ const routes: Routes = [
   { path: 'comp/searchFlights', component: SearchFlightsComponent },
   { path: 'comp/bookings', component: BookingsComponent },
   { path: 'comp/invoice', component: InvoiceComponent },
+  { path: 'comp/payment', component: PaymentComponent }
 ];
 
 @NgModule({
