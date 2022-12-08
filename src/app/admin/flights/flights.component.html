@@ -30,7 +30,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr *ngFor="let f of allFlights">
+                        <tr *ngFor="let f of allFlights.reverse()">
                             <td (click)="updateData(f)">{{f.FlightId}}</td>
                             <td (click)="updateData(f)">{{f.FlightName}}</td>
                             <td (click)="updateData(f)">{{f.Source}}</td>

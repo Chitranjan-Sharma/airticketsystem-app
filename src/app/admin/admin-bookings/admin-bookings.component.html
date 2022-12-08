@@ -33,7 +33,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr *ngFor="let t of searchedTicketList">
+                        <tr *ngFor="let t of searchedTicketList.reverse()">
                             <td (click)="updateData(t)">{{t.TicketId}}</td>
                             <td (click)="updateData(t)">{{t.PassengerName}}</td>
                             <td (click)="updateData(t)">{{t.PassengerEmail}}</td>

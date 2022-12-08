@@ -26,7 +26,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr *ngFor="let c of customers">
+                        <tr *ngFor="let c of customers.reverse()">
                             <td (click)="updateData(c)">{{c.CustomerId}}</td>
                             <td (click)="updateData(c)">{{c.Name}}</td>
                             <td (click)="updateData(c)">{{c.Email}}</td>
