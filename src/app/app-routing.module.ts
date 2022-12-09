@@ -5,6 +5,7 @@ import { AdminHomeComponent } from './admin/admin-home/admin-home.component';
 import { CustomersComponent } from './admin/customers/customers.component';
 import { FeedbacksComponent } from './admin/feedbacks/feedbacks.component';
 import { FlightsComponent } from './admin/flights/flights.component';
+import { PaymentDataComponent } from './admin/payment-data/payment-data.component';
 import { AboutComponent } from './comp/about/about.component';
 import { AdminComponent } from './comp/admin/admin.component';
 import { BookTicketComponent } from './comp/book-ticket/book-ticket.component';
@@ -33,7 +34,8 @@ const routes: Routes = [
   { path: 'admin/flights', component: FlightsComponent },
   { path: 'admin/admin-bookings', component:  AdminBookingsComponent},
   { path: 'admin/feedbacks', component: FeedbacksComponent },
-  { path: 'admin/admin-home', component: AdminHomeComponent }
+  { path: 'admin/admin-home', component: AdminHomeComponent },
+  { path: 'admin/payment-data', component: PaymentDataComponent }
 ];
 
 @NgModule({

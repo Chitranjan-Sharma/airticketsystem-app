@@ -21,6 +21,7 @@ import { FlightsComponent } from './admin/flights/flights.component';
 import { FeedbacksComponent } from './admin/feedbacks/feedbacks.component';
 import { AdminBookingsComponent } from './admin/admin-bookings/admin-bookings.component';
 import { AdminHomeComponent } from './admin/admin-home/admin-home.component';
+import { PaymentDataComponent } from './admin/payment-data/payment-data.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { AdminHomeComponent } from './admin/admin-home/admin-home.component';
     FlightsComponent,
     FeedbacksComponent,
     AdminBookingsComponent,
-    AdminHomeComponent
+    AdminHomeComponent,
+    PaymentDataComponent
   ],
   imports: [
     BrowserModule,

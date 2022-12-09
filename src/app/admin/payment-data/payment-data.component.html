@@ -1,0 +1,69 @@
+<div class="row d-flex justify-content-center p-4">
+
+    <div class="card p-5 mx-2" style="width: 70%;">
+
+        <div class="form-outline form-white mb-1 d-flex justify-content-end">
+
+            <input type="text" class="form-control form-control-sm" style="width: 250px;" placeholder="Search here ..."
+                [(ngModel)]="searchByData" required>
+            <span>
+                <img class="mx-2" src="https://img.icons8.com/ios-glyphs/30/null/search--v1.png"
+                    (click)="searchPayments()" />
+            </span>
+            <span>
+                <img src="https://img.icons8.com/ios-glyphs/30/null/connection-sync.png" (click)="fetchAllPayments()" />
+            </span>
+        </div>
+
+        <div scrollSpyContent="DIV" class="container">
+            <div class="content">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Ticket Id</th>
+                            <th>Name On Card</th>
+                            <th>Card Number</th>
+                            <th>CVV</th>
+                            <th>Expiry</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let p of payments.reverse()">
+                            <td (click)="viewFeedback(p)">{{p.TicketId}}</td>
+                            <td (click)="viewFeedback(p)">{{p.NameOnCard}}</td>
+                            <td (click)="viewFeedback(p)">{{p.CardNumber}}</td>
+                            <td (click)="viewFeedback(p)">{{p.CVVCode}}</td>
+                            <td (click)="viewFeedback(p)">{{p.ExpiryDate}}</td>
+                            <td>
+                                <button class="btn btn-light" type="button" data-bs-toggle="offcanvas"
+                                    data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling">View
+                                    Details</button>
+
+                                <div class="offcanvas offcanvas-end" data-bs-scroll="true" data-bs-backdrop="false"
+                                    tabindex="-1" id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
+                                    <div class="offcanvas-header">
+                                        <div class="col">
+                                            <h6 class="offcanvas-title" id="offcanvasScrollingLabel">Name on card
+                                                :{{p.NameOnCard}}
+                                            </h6>
+
+                                        </div>
+                                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas"
+                                            aria-label="Close"></button>
+                                    </div>
+                                    <div class="offcanvas-body">
+                                        <p>Last 4 digit of card :{{p.CardNumber}}</p>
+                                        <p>CVV code of card :{{p.CVVCode}}</p>
+                                        <p>Card expiry date :MM/YY : {{p.ExpiryDate}}</p>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+
+                </table>
+            </div>
+
+        </div>
+    </div>
+</div>
