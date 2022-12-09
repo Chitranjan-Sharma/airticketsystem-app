@@ -17,6 +17,10 @@ export class AdminComponent {
     this.adminExtensionkey = this.adminExtensionkey + n;
   }
 
+  clear() {
+    this.adminExtensionkey = this.adminExtensionkey.substring(0, this.adminExtensionkey.length - 1);
+  }
+
   admins: Admin[] = [];
 
   adminLogin() {
@@ -26,7 +30,7 @@ export class AdminComponent {
         this.admins.forEach(element => {
           if (element.ExtensionKey.toLowerCase() == this.adminExtensionkey.toLowerCase()) {
             this.api.isAdminLoggedIn = true;
-            this.router.navigate(["admin/flights"]);
+            this.router.navigate(["admin/admin-home"]);
           }
         });
       });

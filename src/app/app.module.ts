@@ -20,6 +20,7 @@ import { CustomersComponent } from './admin/customers/customers.component';
 import { FlightsComponent } from './admin/flights/flights.component';
 import { FeedbacksComponent } from './admin/feedbacks/feedbacks.component';
 import { AdminBookingsComponent } from './admin/admin-bookings/admin-bookings.component';
+import { AdminHomeComponent } from './admin/admin-home/admin-home.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { AdminBookingsComponent } from './admin/admin-bookings/admin-bookings.co
     CustomersComponent,
     FlightsComponent,
     FeedbacksComponent,
-    AdminBookingsComponent
+    AdminBookingsComponent,
+    AdminHomeComponent
   ],
   imports: [
     BrowserModule,

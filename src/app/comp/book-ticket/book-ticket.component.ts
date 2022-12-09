@@ -54,14 +54,30 @@ export class BookTicketComponent implements OnInit {
     console.log(this.ticket);
   }
 
+  tickets: Ticket[] = [];
+
   postTicketData() {
     if (this.ticket.PassengerName != '' && this.ticket.Gender != '' &&
       this.ticket.PassengerEmail != '' && this.ticket.PassengerEmail.includes("@") && this.ticket.PassengerPhone != '' &&
       this.ticket.Address != '' && this.ticket.JourneyDate != '' && this.ticket.TotalFare != 0) {
       this.api.bookTicket(this.ticket).subscribe((res) => {
-        alert("Ticket booked !");
         this.api.ticketData = new Ticket;
         this.api.isTicketBooked = true;
+        this.api.ticketData = this.ticket;
+
+        this.api.getBookings().subscribe((res) => {
+          this.tickets = res as Ticket[];
+
+          this.tickets.forEach(t => {
+            if (t.PassengerEmail == this.ticket.PassengerEmail && t.CustomerId == this.ticket.CustomerId &&
+              t.FlightId == this.ticket.FlightId && t.PassengerPhone == this.ticket.PassengerPhone &&
+              t.JourneyDate == this.ticket.JourneyDate) {
+
+              this.api.ticketData = t;
+
+            }
+          })
+        })
         this.router.navigate(["comp/payment"]);
       },
         (error) => {

@@ -5,6 +5,7 @@ import { Ticket } from '../models/ticket.model';
 import { FlightDetail } from '../models/flight.model';
 import { Feedback } from '../models/feedback.model';
 import { Register } from '../models/register.model';
+import { PaymentDetail } from '../models/payment.model';
 
 @Injectable({
   providedIn: 'root'
@@ -24,6 +25,7 @@ export class API {
   ticketData: Ticket = new Ticket;
   feedbackData: Feedback = new Feedback;
   flightData: FlightDetail = new FlightDetail;
+  paymentData: PaymentDetail = new PaymentDetail;
 
   flightDetailList: FlightDetail[] = [];
 
@@ -113,5 +115,13 @@ export class API {
 
   fetchAdmins() {
     return this.http.get(this.baseUrl + "/Admins");
+  }
+
+  postPayments() {
+    return this.http.post(this.baseUrl + "/Payments", this.paymentData);
+  }
+
+  getPayments() {
+    return this.http.get(this.baseUrl + "/Payments");
   }
 }

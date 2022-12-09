@@ -14,7 +14,7 @@ export class CustomersComponent {
   allCustomers: Register[] = [];
 
   ngOnInit(): void {
-    this.fetchAllFlights();
+    this.searchAllCustomers();
   }
 
   customer: Register = new Register;
@@ -49,7 +49,7 @@ export class CustomersComponent {
   customers: Register[] = [];
   searchByData: string = '';
 
-  searchFlights() {
+  searchCustomers() {
     this.customers = [];
     this.allCustomers.forEach(element => {
       if (element.Name.toLowerCase().includes(this.searchByData.toLowerCase()) ||
@@ -63,7 +63,7 @@ export class CustomersComponent {
 
   }
 
-  fetchAllFlights() {
+  searchAllCustomers() {
 
     this.api.getUserData().subscribe((res) => {
       this.allCustomers = res as Register[];

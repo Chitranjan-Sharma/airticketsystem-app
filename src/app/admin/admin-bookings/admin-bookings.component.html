@@ -4,13 +4,13 @@
 
 
         <div class="form-outline form-white mb-1 d-flex justify-content-end">
-            <span>
-                <button class="btn btn-sm btn-primary" (click)="fetchAllBookings()">View All</button>
-            </span>
-            <input type="text" class="form-control form-control-sm mx-2" style="width: 250px;"
+            <input type="text" class="form-control form-control-sm" style="width: 250px;"
                 placeholder="Search here ..." [(ngModel)]="searchByData" required>
             <span>
-                <img src="https://img.icons8.com/ios-glyphs/30/null/search--v1.png" (click)="searchTickets()" />
+                <img class="mx-2" src="https://img.icons8.com/ios-glyphs/30/null/search--v1.png" (click)="searchTickets()" />
+            </span>
+            <span>
+                <img src="https://img.icons8.com/ios-glyphs/30/null/connection-sync.png" (click)="fetchAllBookings()" />
             </span>
         </div>
 

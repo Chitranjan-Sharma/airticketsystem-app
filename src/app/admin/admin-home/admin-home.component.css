@@ -1,0 +1,140 @@
+.card_bg {
+    background-image: url('/assets/image/mng_cs.jpg');
+    height: 250px;
+    width: fit-content;
+    background-size: cover;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    padding-right: 25%;
+    
+}
+
+.card_bg2 {
+    background-image: url('/assets/image/flg.jpg');
+    height: 250px;
+    width: fit-content;
+    background-size: cover;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    padding-right: 25%;
+    
+}
+
+.card_bg3 {
+    background-image: url('/assets/image/tks.jpg');
+    height: 250px;
+    width: fit-content;
+    background-size: cover;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    padding-right: 25%;
+    
+}
+
+.card_bg4 {
+    background-image: url('/assets/image/fbs.jpg');
+    height: 250px;
+    width: fit-content;
+    background-size: cover;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    padding-right: 25%;
+    
+}
+
+.btMg{
+    margin-top: auto;
+    opacity: 50%;
+}
+
+.pd {
+    padding-top: 100px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.line {
+    width: 150px;
+    height: 4px;
+    background: #fc036b;
+    margin: 10px auto;
+    border-radius: 5px;
+}
+
+
+/* ------------mission--------------- */
+.imgSize {
+    width: 80%;
+    height: 300px;
+}
+
+.title {
+    text-align: center;
+    font-size: 4vmin;
+    color: rgb(8, 8, 121);
+}
+
+.row {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.row .col img {
+    width: 80%;
+    flex-direction: column;
+    align-items: center;
+}
+
+.mission .row {
+    margin-top: 50px;
+}
+
+h4 {
+    font-size: 3vmin;
+    color: black;
+    margin: 20px auto;
+}
+
+p {
+    color: #7c7c7c;
+    margin: 20px auto;
+}
+
+/* explore */
+.explore {
+    width: 100%;
+    height: 100vh;
+    background-image: url(/assets/image/eexplore.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+}
+
+.explore-content {
+    width: 60%;
+    padding: 50px;
+    color: rgb(19, 19, 19);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.explore-content h1 {
+    font-size: 7vmin;
+}
+
+.explore-content .line {
+    margin-bottom: 50px;
+}
+
+.explore-content p {
+    color: rgb(233, 224, 224);
+}
