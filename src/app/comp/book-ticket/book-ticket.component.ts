@@ -71,14 +71,14 @@ export class BookTicketComponent implements OnInit {
           this.tickets.forEach(t => {
             if (t.PassengerEmail == this.ticket.PassengerEmail && t.CustomerId == this.ticket.CustomerId &&
               t.FlightId == this.ticket.FlightId && t.PassengerPhone == this.ticket.PassengerPhone &&
-              t.JourneyDate == this.ticket.JourneyDate) {
+              t.JourneyDate == this.ticket.JourneyDate && t.PassengerName == this.ticket.PassengerName) {
 
               this.api.ticketData = t;
-
+              this.router.navigate(["comp/payment"]);
             }
           })
-        })
-        this.router.navigate(["comp/payment"]);
+        });
+
       },
         (error) => {
           alert(error);

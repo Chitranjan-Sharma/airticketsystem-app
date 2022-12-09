@@ -11,7 +11,6 @@ export class PaymentComponent {
 
   constructor(public router: Router, public api: API) { }
 
-
   paymentDone() {
     if (this.api.paymentData.CardNumber != 0 && this.api.paymentData.CVVCode != 0 && this.api.paymentData.ExpiryDate != '' && this.api.paymentData.NameOnCard != '') {
       this.api.paymentData.TicketId = this.api.ticketData.TicketId;
