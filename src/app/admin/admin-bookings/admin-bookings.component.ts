@@ -24,10 +24,10 @@ export class AdminBookingsComponent {
 
 
   deleteBooking(id: number) {
-    if (confirm("Delete this flight informations ?")) {
+    if (confirm("Delete this flight ticket  ?")) {
       this.api.deleteBookings(id).subscribe((res) => {
         alert("Flight ticket informations deleted !");
-        this.api.getBookings();
+        this.fetchAllBookings();
       },
         (error) => {
           alert(error);
