@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/68125717-c17f-4752-8d01-1a5ac8d2af5f/AppServices/subscriptions/68125717-c17f-4752-8d01-1a5ac8d2af5f/resourceGroups/DbEnabledAzureDemo/providers/Microsoft.Web/sites/atr-services",
+    "appService.deploySubpath": "dist\\airticketsystem-app"
+}
