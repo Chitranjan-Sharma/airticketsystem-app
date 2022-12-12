@@ -28,7 +28,7 @@ export class AdminComponent {
       this.api.fetchAdmins().subscribe((res) => {
         this.admins = res as Admin[];
         this.admins.forEach(element => {
-          if (element.ExtensionKey.toLowerCase() == this.adminExtensionkey.toLowerCase()) {
+          if (element.ExtensionKey == parseInt(this.adminExtensionkey)) {
             this.api.isAdminLoggedIn = true;
             this.router.navigate(["admin/admin-home"]);
           }
