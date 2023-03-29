@@ -19,8 +19,8 @@ export class SearchFlightsComponent {
 
   flights: FlightDetail[] = [];
 
-  source: string = 'Delhi';
-  destination: string = 'Bangaluru';
+  source: string = '';
+  destination: string = '';
   bookingDate: any = '';
 
   showFlights() {

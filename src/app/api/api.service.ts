@@ -20,7 +20,7 @@ export class API {
   constructor(private http: HttpClient) { }
 
   userData: Register = new Register;
-  readonly baseUrl = "https://atr-system-api.azurewebsites.net/api";
+  readonly baseUrl = "http://localhost:5034/api";
 
   ticketData: Ticket = new Ticket;
   feedbackData: Feedback = new Feedback;
